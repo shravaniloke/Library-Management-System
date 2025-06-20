@@ -70,7 +70,7 @@ class Register extends JFrame {
                 }
 
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_javadb", "root", "Kitten@0203");
-                String sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+                String sql = "INSERT INTO users (username, password) VALUES (?, md5(?)";
                 PreparedStatement pst = con.prepareStatement(sql);
                 pst.setString(1, user);
                 pst.setString(2, pwd);
