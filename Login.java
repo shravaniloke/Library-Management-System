@@ -65,7 +65,7 @@ class Login extends JFrame {
                 String pwd = new String(txtPassword.getPassword());
 
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/library_javadb", "root", "Kitten@0203");
-                String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+                String sql = "SELECT * FROM users WHERE username = ? AND password = md5(?)";
                 PreparedStatement pst = con.prepareStatement(sql);
                 pst.setString(1, user);
                 pst.setString(2, pwd);
