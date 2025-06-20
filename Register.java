@@ -8,7 +8,7 @@ class Register extends JFrame {
     JLabel labTitle, labUsername, labPassword;
     JTextField txtUsername;
     JPasswordField txtPassword;
-    JButton btnRegister, btnBack;
+    JButton btnRegister, btnLogin;
 
     Register() {
         setTitle("Library Registration");
@@ -54,10 +54,10 @@ class Register extends JFrame {
         btnRegister.setFont(btnFont);
         c.add(btnRegister);
 
-        btnBack = new JButton("Back");
-        btnBack.setBounds(360, 250, 120, 40);
-        btnBack.setFont(btnFont);
-        c.add(btnBack);
+        btnLogin = new JButton("Login");
+        btnLogin.setBounds(360, 250, 120, 40);
+        btnLogin.setFont(btnFont);
+        c.add(btnLogin);
 
         btnRegister.addActionListener(e -> {
             try {
@@ -87,7 +87,7 @@ class Register extends JFrame {
             }
         });
 
-        btnBack.addActionListener(e -> {
+        btnLogin.addActionListener(e -> {
             new Login();
             dispose();
         });
